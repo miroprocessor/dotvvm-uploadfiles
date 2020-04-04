@@ -1,0 +1,13 @@
+﻿@viewModel DotVVMUploader.ViewModels.DefaultViewModel, DotVVMUploader
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1>{{value: Title}}</h1>
+
+    <dot:FileUpload UploadedFiles="{value: FilesCollection}"
+                    AllowMultipleFiles="true"
+                    AllowedFileTypes=".png,.jpg"
+                    SuccessMessageText="Uploaded"
+                    UploadButtonText="Select Files to Upload"
+                    UploadCompleted="{command: SaveMyFilesToAzure()}"></dot:FileUpload>
+</dot:Content>
